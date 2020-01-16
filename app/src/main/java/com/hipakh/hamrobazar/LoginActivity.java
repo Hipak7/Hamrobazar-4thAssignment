@@ -28,7 +28,7 @@ public class LoginActivity extends AppCompatDialogFragment {
         LayoutInflater inflater = getActivity().getLayoutInflater();
         View view = inflater.inflate(R.layout.activity_login, null);
 
-
+//Validation
         builder.setView(view)
                 .setTitle("Login")
 
