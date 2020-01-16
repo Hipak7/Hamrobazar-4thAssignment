@@ -31,5 +31,11 @@ public interface UsersAPI {
     @POST("upload")
     Call<ImageResponse> uploadImage(@Part MultipartBody.Part img);
 
+    @GET("products")
+    Call<List<Products>>getAllProducts();
+
+
+    @GET("users/me")
+    Call<User> getUserDetails(@Header("Authorization") String token);
 
 }

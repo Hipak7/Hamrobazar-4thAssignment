@@ -18,7 +18,16 @@ public class SplashScreenActivity extends AppCompatActivity {
         handler.postDelayed(new Runnable() {
             @Override
             public void run() {
-               
+                SharedPreferences sharedPreferences = getSharedPreferences("welcome",MODE_PRIVATE);
+                String Ad = sharedPreferences.getString("Ad","");
+                String Terms = sharedPreferences.getString("Terms","");
+                String Safety = sharedPreferences.getString("Safety","");
+
+                if ((Terms.equals("checked")) && (Safety.equals("checked")) && (Ad.equals("checked"))){
+                    Intent intent = new Intent(SplashScreenActivity.this,DashboardActivity.class);
+                    startActivity(intent);
+                    finish();
+                }
                 else {
                     Intent intent = new Intent(SplashScreenActivity.this,MainActivity.class);
                     startActivity(intent);
