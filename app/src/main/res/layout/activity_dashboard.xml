@@ -55,6 +55,95 @@
         android:layout_marginTop="8dp"
         android:padding="10dp">
 
-x
+
+        <SearchView
+            android:layout_width="match_parent"
+            android:layout_height="30dp"
+            android:background="@color/coloWhite"
+            android:foregroundTint="@color/colorskyblue"
+            android:queryHint="Find what you are looking for?" />
+
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="30dp"
+            android:backgroundTint="@color/colorskyblue"
+            android:drawableLeft="@drawable/edit"
+            android:drawablePadding="15dp"
+            android:gravity="left|center"
+            android:singleLine="true"
+            android:text="Post FREE Ad"
+            android:textSize="17dp" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="30dp"
+            android:drawableLeft="@drawable/smartphone"
+            android:drawablePadding="15dp"
+            android:gravity="left|center"
+            android:singleLine="true"
+            android:text="Mobile Handset"
+            android:textSize="17dp" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="30dp"
+            android:drawableLeft="@drawable/laptop"
+            android:drawablePadding="15dp"
+            android:gravity="left|center"
+            android:singleLine="true"
+            android:text="Laptops / Notebooks"
+            android:textSize="17dp" />
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:src="@drawable/keyboard_arrow" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+    <TextView
+        android:layout_width="180dp"
+        android:layout_height="wrap_content"
+        android:text="Popular Trending Ads"
+        android:layout_marginVertical="10dp"
+        android:layout_marginHorizontal="20dp"
+        android:textStyle="bold"
+        android:textSize="18dp"
+        />
+
+        <Button
+            android:layout_width="80dp"
+            android:layout_height="match_parent"
+            android:id="@+id/btnmore"
+            android:text="More"
+            android:textColor="#FFF"
+            android:background="#00BCD4"
+            android:layout_marginLeft="80dp"
+            android:layout_marginTop="10dp"
+            />
+
+    </LinearLayout>
+
+
+    <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+        android:id="@+id/refreshLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="-5dp">
+
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recyclerView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1" />
+
+    </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
 
 </LinearLayout>
