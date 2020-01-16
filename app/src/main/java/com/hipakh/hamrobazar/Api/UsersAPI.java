@@ -19,6 +19,25 @@ import retrofit2.http.Part;
 
 public interface UsersAPI {
 
+    @POST("users/register")
+    Call<RegisterResponse> registerUser(@Body User users);
+
+    @FormUrlEncoded
+    @POST("users/login")
+    Call<RegisterResponse> checkUser(@Field("email") String email,@Field("password") String password);
+
+
+    @Multipart
+    @POST("upload")
+    Call<ImageResponse> uploadImage(@Part MultipartBody.Part img);
+
+    @GET("products")
+    Call<List<Products>>getAllProducts();
+
+
+    @GET("users/me")
+    Call<User> getUserDetails(@Header("Authorization") String token);
+
 
 
 }
