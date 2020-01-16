@@ -28,26 +28,6 @@ public class ProductAdapter extends RecyclerView.Adapter<ProductAdapter.ProductV
     }
 
 
-    @NonNull
-    @Override
-    public ProductViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View view= LayoutInflater.from(parent.getContext())
-                .inflate(R.layout.layouts_products,parent,false);
-        return new ProductViewHolder(view);
-    }
-
-    @Override
-    public void onBindViewHolder(@NonNull ProductViewHolder holder, int position) {
-        Products productsView=productViewList.get(position);
-        holder.tvName.setText(productsView.getProductName());
-        holder.tvPrice.setText("Rs. "+productsView.getProductPrice());
-        holder.tvType.setText(productsView.getProductType());
-
-        //for setting image in recycle view
-        String image=productsView.getImage();
-        String imgPath= Url.imagePath+image;
-
-        Picasso.get().load(imgPath).into(holder.imgProfile);
 
     }
 
