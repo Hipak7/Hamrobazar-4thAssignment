@@ -102,6 +102,86 @@ public class RegisterActivity extends AppCompatActivity {
 
     }
 
+    private boolean validate() {
+        boolean status = true;
+
+
+        if (imgProfile.getDrawable() == null) {
+            Toast.makeText(this, "Please select image", Toast.LENGTH_SHORT).show();
+            imgProfile.requestFocus();
+            status = false;
+        }
+
+        if (TextUtils.isEmpty(etEmail.getText())) {
+            etEmail.setError("Enter email address");
+            etEmail.requestFocus();
+            status = false;
+        }
+        if (TextUtils.isEmpty(etFname.getText())) {
+            etFname.setError("Enter full name");
+            etFname.requestFocus();
+            status = false;
+        }
+        if (TextUtils.isEmpty(etEmail.getText())) {
+            etEmail.setError("Enter email address");
+            etEmail.requestFocus();
+            status = false;
+        }
+        if (TextUtils.isEmpty(etPassword.getText())) {
+            etPassword.setError("Enter password");
+            etPassword.requestFocus();
+            status = false;
+        }
+        if (TextUtils.isEmpty(etPhone.getText())) {
+            etPhone.setError("Enter phone number");
+            etPhone.requestFocus();
+            status = false;
+        }
+        if (TextUtils.isEmpty(etEmail.getText())) {
+            etEmail.setError("Enter email address");
+            etEmail.requestFocus();
+            status = false;
+        }
+        if (TextUtils.isEmpty(etMphone.getText())) {
+            etMphone.setError("Enter mobile phone number");
+            etMphone.requestFocus();
+            status = false;
+        }
+        if (etMphone.toString().length() < 10) {
+            etMphone.setError("Minimum 10 character");
+            etMphone.requestFocus();
+            status = false;
+        }
+
+        if (TextUtils.isEmpty(etAddress1.getText())) {
+            etAddress1.setError("Enter street name");
+            etAddress1.requestFocus();
+            status = false;
+        }
+        if (TextUtils.isEmpty(etAddress2.getText())) {
+            etAddress2.setError("Enter area location");
+            etAddress2.requestFocus();
+            status = false;
+        }
+        if (spAddress3.getSelectedItem() == "Select address") {
+            Toast.makeText(this, "Select address", Toast.LENGTH_SHORT).show();
+            status = false;
+        }
+        if (!chAgree.isChecked()) {
+            chAgree.setError("Please agree terms of use");
+            chAgree.requestFocus();
+            status = false;
+
+        }
+        if (etPassword.toString().length()<6)
+        {
+            etPassword.setError("Minimum 6 character");
+            etPassword.requestFocus();
+            status=false;
+        }
+
+        return status;
+    }
 
 
     private void BrowseImage() {
